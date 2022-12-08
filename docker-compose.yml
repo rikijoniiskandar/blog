@@ -1,0 +1,18 @@
+mysql-docker:
+    image: mysql
+    container_name: mysql-docker
+    environment:
+      - MYSQL_ROOT_PASSWORD=password_rahasia
+    volumes:
+      - express-mysql-data:/var/lib/mysql
+    ports:
+      - '3306:3306'
+    networks:
+      - express-mysql-network
+    restart: on-failure
+
+volumes:
+  express-mysql-data:
+
+networks:
+  express-MySQL-network:
